@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The StudyVerse</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="aboutus-page">
+  <!-- Toggle Menu -->
+  <div class="toggle-menu">
+    <div class="hamburger">
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <nav class="menu">
+      <a href="home.html" class="menu-item is-active">Home</a>
+      <a href="aboutus.html" class="menu-item">About Us</a>
+      <a href="team.html" class="menu-item">Team</a>
+      <a href="signin.html" class="menu-item">Join Us</a>
+    </nav>
+  </aside>
+  <script>
+  const menuToggle = document.querySelector('.toggle-menu');
+  const sidebar = document.querySelector('.sidebar');
+
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('is-active');
+    sidebar.classList.toggle('is-active');
+  });
+  </script>
+  <div class="aboutustitlebold">ABOUT US</div>
+
+  <div class="aboutus-container">
+    <div class="aboutus-section">
+      <p><span class="lpurple">Study</span><span class="white">Verse</span> is a student run academic platform that makes it easier to stay on track when life gets busy.</p>
+    </div>
+  </div>
+
+  <img src="stars.png" alt="stars" class="stars enlarged" />
+
+  <div class="aboutus-container2">
+    <div class="aboutus-section">
+      <p><strong><span class="lpurple">Study</span><span class="white">Verse</span></strong> allows you to access student-shared resources and contribute your own to help others in the same boat.</p>
+      <p>Whether you have <strong>missed a class, took improper notes, need extra notes</strong></p>
+    </div>
+  </div>
+
+  <div class="aboutus-container3">
+    <div class="aboutus-section">
+      <p>Our aim is to create a collaborative academic space where students can <strong>share notes, build flashcards, connect with peers and ask course-specific questions in a way that’s organized, accessible and stress free.</strong></p>
+      <img src="moon.png" alt="moon" class="moon"/>
+      <img src="satellite.png" alt="satellite" class="satellite"/>
+    </div>
+  </div>
+
+  <div class="aboutus-container4">
+    <div class="aboutus-section">
+      <p>We believe no student should fall behind for reasons beyond their control.</p>
+      <p><strong><span class="lpurple">Study</span><span class="white">Verse</span></strong> makes sure everyone has the tools they need to succeed and a community to succeed with.</p>
+      <img src="stars1.png" alt="stars1" class="stars1"/>
+      <img src="stars2.png" alt="stars2" class="stars2"/>
+    </div>
+  </div>
+
+  <div class="aboutus-container5">
+    <div class="aboutus-section">
+    <div class="bottomtext"></div>
+      <p>For when you’re <strong>overwhelmed</strong>, <strong>sick</strong> or <strong>just can’t keep up</strong>, <strong><span class="lpurple">Study</span><span class="white">Verse</span></strong> has got you covered.</p>
+    </div>
+      <img src="cloud1a.png" alt="cloud1a" class="cloud1a"/>
+      <img src="cloud2a.png" alt="cloud2a" class="cloud2a"/>
+    </div>
+  </div>
+</body>

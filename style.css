@@ -1,0 +1,568 @@
+/* home.html css */
+/* Base layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, rgb(13, 18, 71), rgb(50, 49, 126));
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 100%;
+  max-width: 300px;
+  height: 100vh;
+  padding: 2rem 1rem;
+  background-color: rgb(13, 18, 71);
+  transition: right 0.3s ease;
+  z-index: 5;
+}
+.sidebar.is-active {
+  right: 0;
+}
+.sidebar .menu {
+  margin: 0 -1rem;
+}
+.sidebar .menu .menu-item {
+  display: block;
+  padding: 1em;
+  color: white;
+  text-decoration: none;
+}
+.sidebar .menu .menu-item:hover,
+.sidebar .menu .menu-item.is-active {
+  color: rgb(150, 145, 202);
+  border-right: 5px solid rgb(150, 145, 202);
+}
+
+/* Hamburger */
+.toggle-menu {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+.hamburger {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hamburger > span,
+.hamburger > span::before,
+.hamburger > span::after {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  border-radius: 99px;
+}
+.hamburger > span::before {
+  content: "";
+  top: -8px;
+}
+.hamburger > span::after {
+  content: "";
+  top: 8px;
+}
+.toggle-menu.is-active .hamburger > span {
+  transform: rotate(45deg);
+}
+.toggle-menu.is-active .hamburger > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+.toggle-menu.is-active .hamburger > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* Cloud container */
+.clouds {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Base cloud styles */
+.cloud1, .cloud2 {
+  position: absolute;
+  width: 800px;
+  height: 500px;
+  bottom: -100px;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+/* LEFT cloud — comes in from far left */
+.cloud1 {
+  left: -900px;
+  animation: cloud1SlideIn 3s ease-out forwards, cloudFloat 6s ease-in-out 2s infinite alternate;
+}
+
+/* RIGHT cloud — comes in from far right */
+.cloud2 {
+  right: -900px;
+  animation: cloud2SlideIn 3s ease-out forwards, cloudFloat 6s ease-in-out 2s infinite alternate;
+}
+
+/* Slide in cloud1 and stop near bottom-left corner */
+@keyframes cloud1SlideIn {
+  to {
+    left: -90px;
+    opacity: 1;
+  }
+}
+
+/* Slide in cloud2 and stop near bottom-right corner */
+@keyframes cloud2SlideIn {
+  to {
+    right: -90px;
+    opacity: 1;
+  }
+}
+
+/* Floating animation (shared) */
+@keyframes cloudFloat {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-25px);
+  }
+}
+
+/* Image scaling */
+.cloud1 img, .cloud2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* Logo */
+.logo {
+  position: absolute;
+  top: 32%; /* Moves it up on the screen */
+  left: 50%;
+  transform: translate(-50%, 60%); /* Starts lower */
+  opacity: 0;
+  width: 950px; /* Increase size */
+  animation: riseUp 2.5s ease-out 3s forwards;
+}
+
+@keyframes riseUp {
+  from {
+    transform: translate(-50%, 80%); /* start lower */
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -40%); /* rise higher */
+    opacity: 1;
+  }
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+/* Tagline + Star */
+.tagline {
+  position: absolute;
+  top: 64%; /* slightly lower */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  animation: fadeInText 2.5s ease-out 5.5s forwards;
+  z-index: 3;
+  font-weight: 525;
+}
+
+.tagline p {
+  font-size: 2.2rem;
+  margin: 0.5rem 0;
+  color: white;
+}
+
+.star {
+  width: 120px; /* bigger */
+  animation: glow 1.5s ease-in-out infinite alternate;
+  display: block;
+  margin: 20px auto 0 auto; /* space below text */
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+@keyframes glow {
+  from {
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
+  }
+  to {
+    transform: scale(1.3);
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 1));
+  }
+}
+
+/*team.html css*/
+
+.team-section {
+  padding-top: 0;
+  text-align: center;
+}
+
+.mainatitle,
+.cofounders,
+.webdev {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  text-shadow: 2px 1px rgb(82,75,144); 
+  color: rgb(255,223,150);
+  text-align: center;
+  font-size: 40px;
+}
+
+.mainatitle {
+  font-size: 60px;
+  margin-top: 2.5rem;
+  margin-bottom:0.1rem;
+}
+.webdev {
+  margin-bottom:0.8rem;
+}
+
+.team-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  color: white; 
+}
+
+.member img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.member p {
+  margin: 0.25rem 0;
+  font-weight: 400;
+}
+
+.member a {
+  color: white; /* LinkedIn blue */
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.member a:hover {
+  color: rgb(150, 145, 202);
+}
+
+/* aboutus.html */
+
+body.aboutus-page {
+  overflow-y: auto;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.aboutustitlebold {
+  font-weight: 900;
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: 2px 2px rgb(82,75,144); 
+  color: rgb(255, 223, 150);
+  text-align: center;
+  font-size: 100px;
+  margin-top: 60px;
+  margin-bottom: 5px;
+}
+
+.aboutus-section {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 35px;
+  position: relative; /* enables absolute positioning for children */
+  padding: 90px 20px;
+}
+
+
+.lpurple {
+  color: rgb(187, 159, 255);
+  font-weight: 600;
+}
+
+/* Fix #2: Let .stars span wider than section */
+.stars {
+  display: block;
+  width: 1000px;     /* Full viewport width */
+  height: auto;
+  z-index: 1;
+  position: relative;
+  margin-top: -200px;
+  max-width: 100vw;  /* prevent default browser limit */
+}
+
+/* Optional: Increase height too */
+.stars.enlarged {
+  width: 2100px;
+  max-width: 1600px;
+  height: auto;
+}
+
+.white {
+  color: white;
+  font-weight: 600;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.aboutus-container2 .aboutus-section
+{
+  margin-top: -100px;  /* adjust upward */
+}
+
+/* Moon image in top-right corner */
+.aboutus-section .moon {
+    max-width: none; /* remove inherited max-width */
+  position: absolute;
+  top: -70px;
+  right: -400px;
+  width: 550px;
+  z-index: 1;
+}
+
+.aboutus-container3
+{
+  margin-top:150px;
+}
+
+.aboutus-container4 {
+  margin-top:350px;
+  position: relative;
+}
+
+.stars1, .stars2 {
+  max-width: none; /* remove inherited max-width */
+  position: absolute;
+  width: 300px; /* adjust as needed */
+  height: auto;
+  z-index: 1;
+
+}
+
+.stars1 {
+  top: -0px;
+  left: -200px;
+}
+
+.stars2 {
+  bottom: -40px;
+  right: -200px;
+}
+
+/* Satellite image in bottom-left corner */
+.aboutus-section .satellite {
+    max-width: none; /* remove inherited max-width */
+  position: absolute;
+  bottom: -80px;
+  left: -300px;
+  width: 450px;
+  z-index: 1;
+}
+
+.aboutus-container5 {
+  height: 100vh; /* full screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.aboutus-container5 .aboutus-section {
+  font-size: 35px;
+  line-height: 1.8;
+  max-width: 900px;
+  z-index: 2;
+  position: relative;
+  padding-bottom: 200px; /* creates space above clouds */
+}
+
+/* Clouds pinned to bottom of viewport */
+.cloud1a,
+.cloud2a {
+  position: absolute;
+  bottom: -100px;
+  width: 900px; /* larger clouds */
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cloud1a {
+  left: -200px;
+}
+
+.cloud2a {
+  right: -200px;
+}
+
+/*signin.html*/
+.wrap {
+  max-width: 450px;             /* wider box */
+  width: 95%;
+  padding: 2.5rem 2rem;         /* more breathing room */
+  margin: 60px auto;
+  background-color: rgb(10, 13, 55);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 20px 35px rgba(41, 38, 38, 0.4);
+  color: white;
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: white;
+  margin-bottom: 1.8rem;
+}
+
+form input {
+  width: 90%;
+  outline: none;
+  border: none;
+  padding: 14px 20px;
+  margin-bottom: 16px;
+  border-radius: 30px;
+  background: white;
+  color: black;
+  font-size: 1rem;
+}
+
+form input::placeholder {
+  color: #666;
+}
+
+button {
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  padding: 12px 0;
+  border-radius: 30px;
+  border: none;
+  width: 100%;
+  color: white;
+  cursor: pointer;
+  background: #ba9fff;
+  margin-bottom: 1rem;
+}
+
+button:hover {
+  background: rgb(150, 145, 202);
+}
+
+input:focus {
+  border: 2px solid rgb(218, 190, 127);
+}
+
+.terms {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: white;
+  text-align: left;
+}
+
+.terms input {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.terms label {
+  font-size: 0.85rem;
+  color: white;
+}
+
+.account a {
+  color: rgb(218, 190, 127);
+  text-decoration: none;
+}
+.account a:hover {
+  text-decoration: underline;
+}
+
+.termsncond a {
+  color: rgb(218, 190, 127);
+  text-decoration: none;
+}
+
+.member {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: white;
+}
+
+.member a {
+  color: rgb(218, 190, 127);
+}
+
+.recover a {
+  color: rgb(218, 190, 127);
+}
+
+.auth-logo {
+  width: 250px;            /* adjust size */
+  margin-bottom: 1rem;     /* space below logo */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

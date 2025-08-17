@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The StudyVerse</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Toggle Menu -->
+  <div class="toggle-menu">
+    <div class="hamburger">
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <nav class="menu">
+      <a href="home.html" class="menu-item is-active">Home</a>
+      <a href="aboutus.html" class="menu-item">About Us</a>
+      <a href="team.html" class="menu-item">Team</a>
+      <a href="signin.html" class="menu-item">Join Us</a>
+    </nav>
+  </aside>
+
+  <!-- Clouds -->
+  <div class="clouds">
+    <div class="cloud1">
+      <img src="cloud1.png" alt="Cloud 1" />
+    </div>
+    <div class="cloud2">
+      <img src="cloud2.png" alt="Cloud 2" />
+    </div>
+  </div>
+
+  <!-- Logo -->
+  <div class="logo">
+    <img src="logo.png" alt="StudyVerse Logo" />
+  </div>
+
+  <!-- Tagline and Star -->
+  <div class="tagline">
+    <p>Tap Into a Universe of Learning</p>
+    <img src="star.png" alt="Glowing Star" class="star" />
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+  const menuToggle = document.querySelector('.toggle-menu');
+  const sidebar = document.querySelector('.sidebar');
+
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('is-active');
+    sidebar.classList.toggle('is-active');
+  });
+
+  // AFTER slide-in completes, apply float
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.querySelector('.cloud1').classList.add('float');
+      document.querySelector('.cloud2').classList.add('float');
+    }, 2000); // match slide-in duration
+  });
+</script>
+</body>
+</html>

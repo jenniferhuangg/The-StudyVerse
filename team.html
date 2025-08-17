@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The StudyVerse</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+     <!-- Toggle Menu -->
+  <div class="toggle-menu">
+    <div class="hamburger">
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <nav class="menu">
+      <a href="home.html" class="menu-item is-active">Home</a>
+      <a href="aboutus.html" class="menu-item">About Us</a>
+      <a href="team.html" class="menu-item">Team</a>
+      <a href="signin.html" class="menu-item">Join Us</a>
+    </nav>
+  </aside>
+  <script>
+  const menuToggle = document.querySelector('.toggle-menu');
+  const sidebar = document.querySelector('.sidebar');
+
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('is-active');
+    sidebar.classList.toggle('is-active');
+  });
+  </script>
+    <div class="team-section">
+  <h2 class="mainatitle">MEET THE TEAM</h2>
+
+  <h3 class="cofounders">FOUNDERS</h3>
+  <div class="team-row">
+    <div class="member">
+      <img src="christine.png" alt="Christine" />
+      <p>Christine L.</p>
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+    <div class="member">
+      <img src="sarah.png" alt="Sarah" />
+      <p>Sarah C.</p>
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+    <div class="member">
+      <img src="vansh.png" alt="Vansh" />
+      <p>Vansh A.</p>
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+  </div>
+
+  <h3 class="webdev">WEB DEVELOPERS</h3>
+  <div class="team-row">
+    <div class="member">
+      <img src="anwar.png" alt="Anwar" />
+      <p>Anwar M.</p>
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+    <div class="member">
+      <img src="jennifer.png" alt="Jennifer" />
+      <p>Jennifer H.</p>
+      <a href="https://www.linkedin.com/in/jennifer-huang-b68ab4317"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+  </div>
+</div>
+</body>
